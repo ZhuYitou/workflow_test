@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run:  g++ zyx_1184.cpp -o test # && test < in.txt > out.txt && cat out.txt
+        run:  g++ zyx_1184.cpp -o test && ./test < in.txt > out.txt && cat out.txt
