@@ -1,0 +1,90 @@
+#include <iostream>
+#include <string>
+/*your code begin*/
+
+
+/*your code end*/
+
+using namespace std;
+
+const int MaxSize = 20;
+
+/*your code begin*/
+
+
+/*your code end*/
+
+template<class T>
+class MyCards {
+public:
+    MyCards(T *a, int size); //构造函数，传入初始手牌数组
+
+    void Match();// 弃置配对牌操作
+    void Show();  //展示手牌操作
+
+private:
+    /*your code begin*/
+
+
+    /*your code end*/
+};
+
+template<class T>
+MyCards<T>::MyCards(T *a, int size) {
+    /*your code begin*/
+
+
+    /*your code end*/
+}
+
+template<class T>
+void MyCards<T>::Match() {
+    /*your code begin*/
+
+
+    /*your code end*/
+}
+
+template<class T>
+void MyCards<T>::Show() {
+    /*your code begin*/
+
+
+    /*your code end*/
+}
+
+int main() {
+    int kind = 0;
+    cin >> kind;
+
+    int num[MaxSize] = {};
+    char letter[MaxSize] = {};
+
+    cin.clear();
+    cin.ignore();
+
+    string input;
+    getline(cin, input);
+    int input_num = 0;
+
+    if (kind == 1) {//1-13
+        /*your code begin*/
+
+
+        /*your code end*/
+        MyCards<int> myCards(num, input_num);
+        myCards.Match();
+        myCards.Show();
+    } else {//A-M
+        /*your code begin*/
+
+
+        /*your code end*/
+
+        MyCards<char> myCards(letter, input_num);
+        myCards.Match();
+        myCards.Show();
+    }
+
+    return 0;
+}
