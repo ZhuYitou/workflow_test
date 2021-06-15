@@ -25,13 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      # - name: Run a one-line script
-      #   run: cat template.txt
-
-      # Runs a set of commands using the runners shell
       - name: compile and run
-        run: |
-          g++ zyx_1184.cpp -o test
-          test < in.txt > out.txt
-          cat out.txt
+        run: 
+          g++ zyx_1184.cpp -o test && test < in.txt > out.txt && cat out.txt
