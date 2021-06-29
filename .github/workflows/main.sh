@@ -8,5 +8,6 @@ g++ final.cpp -o test
 
 ./test < in.txt > out.txt
 
-echo (diff -q out.txt ans.txt)
+diff -q -s out.txt ans.txt
+
 return 0
