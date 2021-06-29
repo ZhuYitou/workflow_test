@@ -1,2 +1,59 @@
-ggg
-kkk
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+const int MaxSize = 20;
+
+template<class T>
+class MyCards {
+public:
+    MyCards(T *a, int size); //构造函数，传入初始手牌数组
+
+    void Match();// 弃置配对牌操作
+    void Show();  //展示手牌操作
+
+private:
+    T cards[MaxSize] = {};
+    int card_num = 0;
+
+    T ans[MaxSize] = {};
+    int ans_num = 0;
+};
+
+template<class T>
+MyCards<T>::MyCards(T *a, int size) {
+    card_num = size;
+    for (int i = 0; i < card_num; ++i) {
+        cards[i] = a[i];
+    }
+}
+
+template<class T>
+void MyCards<T>::Match() {
+    sort(cards, cards + card_num);
+
+//    for (int i = card_num - 1; i > 0; --i) {
+//        cout << cards[i] << ' ';
+//    }
+//    cout << cards[0];
+
+    bool is_ans = true;
+    for (int i = 1; i < card_num; ++i) {
+        if (cards[i] == cards[i - 1]) {
+            is_ans = !is_ans;
+        } else {
+            if (is_ans) {
+                ans[ans_num] = cards[i - 1];
+                ans_num++;
+            }
+            is_ans = true;
+        }
+    }
+
+    if (is_ans) {
+        ans[ans_num] = cards[card_num - 1];
+        ans_num++;
+    }
+}
