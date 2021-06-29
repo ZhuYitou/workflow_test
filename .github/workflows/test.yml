@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: test
-        run: cat > 1.txt << \nEOF 2.txt # g++ zyx_1184.cpp -o test && ./test < in.txt > out.txt && cat out.txt
+        run: cat > 1.txt << \\n 2.txt # g++ zyx_1184.cpp -o test && ./test < in.txt > out.txt && cat out.txt
